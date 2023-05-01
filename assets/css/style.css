@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	background: linear-gradient(to top, #82ffcf 0%, #c3fdf6 100%);
+	color: #252a34;
+	min-height: 100vh;
+}
+h1,
+h2 {
+	user-select: none;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+
+/* ! =============== Reused Styles =============== */
+
+.flexx {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.btn {
+	text-transform: uppercase;
+	color: #252a34;
+	background-color: transparent;
+	border: 2px solid #252525;
+	padding: 0.5rem 0.8rem;
+	border-radius: 4px;
+	letter-spacing: 0.2rem;
+	cursor: pointer;
+	font-weight: 600;
+	transition: all 0.2s linear;
+	box-shadow: 0 3px 5px #0000002a;
+	transform: translateY(-0.15rem);
+}
+.btn:hover {
+	color: #fff;
+	background-color: #252a34;
+	box-shadow: 0 1px 2px #0000002a;
+	transform: translateY(0.15rem);
+}
+.trash-btn {
+	font-size: 1.5rem;
+	background-color: #ff375f;
+	border: 2px solid #ff375f;
+	color: #252a34;
+}
+.trash-btn:hover {
+	background-color: #ff375f;
+	color: #fff;
+}
+
+/* ! =============== Header =============== */
+
+header {
+	font-size: 2.3rem;
+}
+header,
+form {
+	min-height: 12vh;
+	flex-direction: column;
+	gap: 2rem;
+}
+form input,
+form button {
+	padding: 0.5rem 1rem;
+	font-size: 2rem;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	background-color: #fff;
+	font-family: inherit;
+	width: 40vw;
+	box-shadow: -3px 5px 10px #0000002a;
+}
+form input:is(:hover, :focus-visible) {
+	box-shadow: -3px 3px 5px #0000002a;
+}
+form .btn {
+	width: max-content;
+}
+h2 {
+	font-size: 2.5rem;
+	margin-top: 2rem;
+}
+
+/* * =============== Select Options =============== */
+
+select {
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.select {
+	margin: 1rem;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	box-shadow: -3px 5px 10px #0000002a;
+}
+.select:hover {
+	box-shadow: -1px 1px 5px #0000002a;
+}
+select {
+	color: #252a34;
+	width: 21rem;
+	height: 4rem;
+	cursor: pointer;
+	font-size: 2rem;
+	padding: 0.5rem 1rem;
+}
+.select::after {
+	content: "\25BC";
+	position: absolute;
+	background: #fff;
+	top: 50%;
+	right: 0%;
+	font-size: 1.9rem;
+	transform: translateY(-50%);
+	padding: 1rem;
+	pointer-events: none;
+	transition: all 0.3s ease;
+}
+.select:hover::after {
+	background-color: #252a34;
+	color: #fff;
+}
+
+/* ! =============== Task List =============== */
+
+.task-list {
+	flex-direction: column;
+	gap: 2rem;
+}
+.tasks {
+	flex-wrap: wrap;
+	min-width: 30%;
+}
+.task {
+	justify-content: flex-end;
+	margin-bottom: 1rem;
+	color: #252a34;
+	font-size: 1.5rem;
+	padding: 0.5rem;
+	width: 70vw;
+	background-color: #fff;
+	transition: all 0.7s ease;
+	box-shadow: -3px 3px 7px #0000002a;
+	transform: scale(1.01);
+}
+.task:not(.task:hover) {
+	transform: scale(1);
+}
+.task p,
+.actions {
+	padding: 1.5rem;
+	font-size: 2rem;
+	outline: none;
+	font-family: inherit;
+	transition: all 0.3s linear;
+}
+.task p {
+	flex: 1;
+	text-align: left;
+	min-width: 250px;
+	cursor: pointer;
+}
+.actions {
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 1rem;
+}
+
+/* * Default Task */
+
+.default-task p {
+	pointer-events: none;
+	user-select: none;
+	text-align: center;
+}
+.default-task span {
+	font-size: 5rem;
+}
+
+/* ! =============== Classes Having Js Functionalities =============== */
+
+.default-task.hide {
+	display: none;
+}
+.completed p {
+	text-decoration: line-through;
+	opacity: 0.4;
+}
+.completed {
+	background-color: #eee;
+}
+.fall {
+	z-index: 1;
+	transform: translateY(25rem) rotateZ(15deg);
+	opacity: 0;
+}
+
+/* ! =============== Media Queries =============== */
+
+@media (max-width: 500px) {
+	html {
+		font-size: 55%;
+	}
+	form input.new-task-input {
+		width: 70vw;
+	}
+}
+@media (max-width: 900px) {
+	.task {
+		width: 90vw;
+	}
+	form input {
+		width: 60vw;
+	}
+}

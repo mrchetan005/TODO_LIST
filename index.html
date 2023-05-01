@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Todo List</title>
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+	<body>
+		<!-- ! ============ HEADER ============ -->
+		<header class="flexx">
+			<h1>My Todo List</h1>
+		</header>
+		<main>
+			<form id="new-task-form" class="flexx">
+				<div>
+					<input
+						type="text"
+						class="new-task-input"
+						placeholder="Enter new todo here..."
+					/>
+				</div>
+				<button type="submit" class="add-new-task btn">add task</button>
+			</form>
+
+			<!-- ! ============ TASK LIST ============ -->
+			<div class="task-list flexx">
+				<h2>Tasks</h2>
+				<div class="flexx">
+					<div class="select">
+						<select name="tasks" class="filter-task">
+							<option value="all">All</option>
+							<option value="completed">Completed</option>
+							<option value="uncompleted">Not Completed</option>
+						</select>
+					</div>
+					<button class="btn trash-btn trash-all-btn">Clear All</button>
+				</div>
+				<div class="task default-task">
+					<p>You have no tasks here, enjoy! <span>🍻</span></p>
+				</div>
+				<div class="tasks flexx"></div>
+			</div>
+		</main>
+		<!-- ! ============ SCRIPT ============ -->
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>
